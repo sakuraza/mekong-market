@@ -15,7 +15,7 @@ function ProductsScreen(props) {
           <div className="product-name"><a href="product.html">Slim Shirt</a></div>
           <div className="product-brand">Montagut</div>
           <div className="product-price">$60</div>
-          <div className="product-rationg">4.5 Stars (10 reviews)</div>
+          <div className="product-rationg"><span><i className="fa fa-star"></i></span></div>
       </div>
   </li>
   <li>

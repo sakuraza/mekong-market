@@ -71,6 +71,7 @@ a:hover{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding: 0;
 }
 .products li{
   list-style-type: none;
