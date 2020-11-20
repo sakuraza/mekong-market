@@ -3,61 +3,48 @@ html{
   box-sizing: border-box;
 }
 body{
-  font: 1.6rem Helvetica;
-  height: 100vh;
   margin: 0;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family:  Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 #root{
-  height:100%;
+  height: 100%;
 }
+/* Layout */
 .grid-container{
   display: grid;
-  grid-template-areas: 
-  "header"
-  "main"
-  "footer";
+  grid-template-areas:
+      "header"
+      "main"
+      "footer";
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr 5rem;
   height: 100% ;
 }
-.header{
+header{
   grid-area: header;
   background-color:  #203040;
-  color: #fff;
-  display : flex;
-  justify-content: space-between;
-  align-items: center;
-  padding :0.5rem;
 }
-.brand a{
-  color: #fff;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-decoration: none;
-}
-.header-links{
-  display: flex;
-  justify-content: space-between ;
-  width: 9rem;
-}
-.header-links a{
-  color:#fff;
-  text-decoration: none;
-}
-.header-links a:hover{
-  color:#ff8000;
-}
-.main{
+main{
   grid-area: main;
-  text-align:left;
+  padding: 1rem;
 }
-.footer{
+footer{
   grid-area: footer;
   background-color:  #203040;
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+/* Common */
+h1{
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+h2{
+  font-size: 1.6rem;
+  padding: 1rem 0;
 }
 a{
   text-decoration: none;
@@ -65,46 +52,52 @@ a{
 a:hover{
   color:#ff8000;
 }
-/* Home Screen */
-.products{
+/* Header */
+header a{
+  color:#fff;
+  padding: 1rem;
+}
+a.brand{
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.row{
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  padding: 0;
-}
-.products li{
-  list-style-type: none;
-  padding: 0;
-  flex: 0 1 34rem;
-  margin: 1rem;
-  height: 50 rem;
-  border-bottom: .1rem #c0c0c0 solid;
-}
-.product{
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  height: 100%;    
+  align-items: center;
 }
-.product-name{
-  font-size: 2rem;
-  font-weight: bold;
+.row.center{
+  justify-content: center;
 }
-.product-brand{
-  font-size: 1.2rem;
-  color:#808080;
+/* Image */
+img{
+  border-radius: 0.5rem;
 }
-.product-price{
-  font-size: 2rem;
-  font-weight: bold;
+img.medium{
+  max-width: 29rem;
+  width: 100%;
 }
-.product-image{
-  max-width: 34rem;
-  max-height: 34rem;
+/* Card */
+.card{
+  border: .1rem #c0c0c0 solid;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+  margin: 1rem;
 }
-.product-rating{
+.card-body{
+  padding: 1rem;
+}
+.card-body  > *{
   margin-bottom: 1rem;
+}.price{
+  font-size: 2rem;
+}
+/* Rating */
+.rating span{
+  color: #f0c040;
+  margin: 0.1rem;
 }
 
 /* SideBar */
@@ -118,7 +111,6 @@ a:hover{
 }
 .sidebar{
   position: fixed;
-  transition: all 0.5s;
   transform: translateX(-30rem);
   width: 30rem;
   background-color: #f0f0f0;
@@ -139,67 +131,4 @@ a:hover{
   position: absolute;
   right: 0.5rem;
   top: 1.5rem;
-}
-
-/* Product Details */
-.details {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  padding: 1rem;
-}
-.details-image {
-  flex: 2 1 60rem;
-}
-.details-image img {
-  max-width: 60rem;
-  width: 100%;
-}
-.details-info {
-  flex: 1 1 30rem;
-}
-.details-action {
-  flex: 1 1 30rem;
-}
-
-.details-info ul,
-.details-action ul {
-  list-style-type: none;
-  padding: 0;
-}
-.details-info li,
-.details-action li {
-  margin-bottom: 1rem;
-}
-.back-to-result {
-  padding: 1rem;
-}
-.details-action {
-  border: 0.1rem #808080 solid;
-  border-radius: 0.5rem;
-  background-color: #f8f8f8;
-  padding: 1rem;
-}
-.details-action ul li:last-child {
-  display: flex;
-  flex-direction: column;
-}
-.button {
-  padding: 1rem;
-  border: 0.1rem #808080 solid;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-.button:hover {
-  border: 0.1rem #404040 solid;
-}
-.button.primary {
-  background-color: #f0c040;
-}
-.button.secondary {
-  background-color: #f0f0f0;
-}
-.text-center {
-  text-align: center;
 }
