@@ -40,3 +40,14 @@ collaborate (see also: git help workflows)
 'git help -a' and 'git help -g' list available subcommands and some
 concept guides. See 'git help <command>' or 'git help <concept>'
 to read about a specific subcommand or concept.
+/frontend/package-lock.json
+
+# dependencies
+node_modules
+/.pnp
+.pnp.json
+# testing
+/coverage
+
+#production
+build
