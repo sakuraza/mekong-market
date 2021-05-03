@@ -13,7 +13,7 @@ function ProductScreen(props) {
         <Link to="/">Back to result</Link>
         <div className="row top">
           <div className="col-2">
-            <img className="large" src={product.image} alt="product"></img>
+            <img className="large" src={product.image} alt={product.name}></img>
           </div>
           <div className="col-1">
             <ul>
@@ -51,7 +51,7 @@ function ProductScreen(props) {
                       {product.countInStock > 0 ? (
                         <span className="success">In Stock</span>
                       ) : (
-                        <span className="error">Out Of Stock</span>
+                        <span className="danger">Out Of Stock</span>
                       )}
                     </div>
                   </div>
